@@ -25,7 +25,7 @@ def normalPdf(c,mean,std):
     return normal(c,mean,std)
 
 def uniformPdf(c,a,b):
-    if c>=a or c<=b:
+    if c>=a and c<=b:
         return uniform(a,b)
     else:
         return 0
@@ -100,9 +100,12 @@ entryDUpd = tk.Entry(tabUcd).grid(row=5,column=1)
 checkButtonUcd = tk.Checkbutton(tabUcd,text="Show Graph",variable=showGraphUcd,onvalue=1,offvalue=0).grid(row=6,column=1)
 
 def calcUcd():
-    pass
+    c = int(cVar.get())
+    d = int(dVar.get())
+    a = int(aVar.get())
+    b = int(bVar.get())
 
-ucdCalcButton = tk.Button(tabUcd,text="Calculate").grid(row=7,column=1)
+ucdCalcButton = tk.Button(tabUcd,text="Calculate",command=calcUcd).grid(row=7,column=1)
 
 
 # Normal Probabability Distribution Tab 
@@ -161,7 +164,10 @@ checkButtonNcd = tk.Checkbutton(tabNcd,text="Show Graph",variable=showGraphNcd,o
 resultsLabel = tk.Label(tabNcd,text="").grid(row=8,column=1)
 
 def calcNcd():
-    pass
+    c = int(cVar.get())
+    d = int(dVar.get())
+    mean = float(aVar.get())
+    std = float(bVar.get())
 
 
 ncdCalcButton= tk.Button(tabNcd,text="Calculate",command=calcNcd).grid(row=7,column=1)
