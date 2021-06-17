@@ -26,7 +26,7 @@ def normalPdf(c,mean,std):
     return normalf(c,mean,std)
 
 def uniformPdf(c,a,b):
-    if c>=a or c<=b:
+    if c>=a and c<=b:
         return uniformf(a,b)
     else:
         return 0
@@ -134,7 +134,7 @@ ucdCalcButton = tk.Button(tabUcd,text="Calculate",command=calcUcd).grid(row=7,co
 showGraphNpd = tk.IntVar()
 tabNpd = tk.Frame(tabControl)
 tk.Label(tabNpd,text="X ~ N(μ,σ)").grid(row=0)
-tk.Label(tabNpd,text="P(X = C)").grid(row=1)
+tk.Label(tabNpd,text="P(X = C),").grid(row=1)
 tk.Label(tabNpd, text="C").grid(row=2)
 tk.Label(tabNpd, text="Mean (μ)").grid(row=3)
 tk.Label(tabNpd, text="Standard Deviation (σ)").grid(row=4)
